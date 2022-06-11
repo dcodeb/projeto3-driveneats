@@ -49,6 +49,7 @@ body {
 }
 
 .item > div {
+    width: 172px;
     padding: 14px;
     background-color: white;
     box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
@@ -102,18 +103,14 @@ body {
     object-fit: cover;
 }
 
-.options::-webkit-scrollbar {
-    height: 3px;
-}
-
 .options::-webkit-scrollbar-thumb {
-    background-color: #cf2b2b;
+    background-color: lightgray;
     border-radius: 20px;
 }
 
 .products-list-container {
     margin: 115px 0 130px;
-    padding: 0px 25px;
+    padding: 0px 15px;
 }
 
 .fixed-menu {
@@ -141,6 +138,7 @@ body {
 
 .enable-continue {
     background-color: #32B72F !important;
+    font-weight: 700 !important;
 }
 
 .show-cfo {
@@ -168,6 +166,7 @@ body {
     text-align: center;
     color: white;
     border-radius: 9px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
 }
 
 .box-order > h3 {
@@ -182,10 +181,12 @@ body {
     font-size: 19px;
     font-weight: 400;
     margin-bottom: 18px;
+    text-align: left;
 }
 
 .box-order > div:last-of-type {
     font-weight: 700;
+    margin-bottom: 30px;
 }
 
 .box-order button {
@@ -210,4 +211,10 @@ body {
     font-size: 17px;
     background: none;
     color: white;
+}
+
+@media (max-width: 614px) {
+    .options::-webkit-scrollbar {
+        height: 0px;
+    }
 }
