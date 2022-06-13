@@ -54,13 +54,13 @@ function completeOrder() {
         totalValueOrder = (valueFood + valueDrink + valueDessert).toFixed(2);
 
         document.querySelector('#chosen-food').innerHTML = nameFood;
-        document.querySelector('#price-food').innerHTML = valueFood;
+        document.querySelector('#price-food').innerHTML = valueFood.toLocaleString('PT');
 
         document.querySelector('#chosen-drink').innerHTML = nameDrink;
-        document.querySelector('#price-drink').innerHTML = valueDrink;
+        document.querySelector('#price-drink').innerHTML = valueDrink.toLocaleString('PT');
 
         document.querySelector('#chosen-dessert').innerHTML = nameDessert;
-        document.querySelector('#price-dessert').innerHTML = valueDessert;
+        document.querySelector('#price-dessert').innerHTML = valueDessert.toLocaleString('PT');
 
         document.querySelector('#total-order').innerHTML = `R$ ${totalValueOrder}`;
         showHideOrder();
@@ -76,15 +76,16 @@ function openWhatsappMessage() {
     const addressClient = prompt('Precisamos saber onde entregaremos seu super pedido: ');
 
     const messageOrder = `
-        Olá, gostaria de fazer o pedido:
-        - Prato: ${nameFood}
-        - Bebida: ${nameDrink}
-        - Sobremesa: ${nameDessert}
-        Total: R$ ${totalValueOrder}
+Olá, gostaria de fazer o pedido:
+- Prato: ${nameFood}
+- Bebida: ${nameDrink}
+- Sobremesa: ${nameDessert}
+Total: R$ ${totalValueOrder}
 
-        Nome: ${nameClient}
-        Endereço: ${addressClient}
-    `;
+Nome: ${nameClient}
+Endereço: ${addressClient}
+`;
+
     const urlMessage = `https://wa.me/${5581999998888}?text=${encodeURIComponent(messageOrder)}`;
     window.open(urlMessage, '_blank');
 }
